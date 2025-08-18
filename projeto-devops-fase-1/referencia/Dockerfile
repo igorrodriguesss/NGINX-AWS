@@ -1,9 +1,6 @@
 # Imagem base - Nginx Alpine (leve e eficiente)
 FROM nginx:alpine
 
-# Remove a página padrão do Nginx
-RUN rm -rf /usr/share/nginx/html/*
-
 # Copia os arquivos do website para o diretório do Nginx
 COPY website/ /usr/share/nginx/html/
 

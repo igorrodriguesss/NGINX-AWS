@@ -153,14 +153,6 @@ Abra o Dockerfile no seu editor e adicione:
 # Imagem base - Nginx Alpine (leve e eficiente)
 FROM nginx:alpine
 
-# Metadados sobre a imagem
-LABEL maintainer="seu-email@exemplo.com"
-LABEL description="Website estático containerizado"
-LABEL version="1.0"
-
-# Remove a página padrão do Nginx
-RUN rm -rf /usr/share/nginx/html/*
-
 # Copia os arquivos do website para o diretório do Nginx
 COPY website/ /usr/share/nginx/html/
 
@@ -174,8 +166,6 @@ CMD ["nginx", "-g", "daemon off;"]
 #### 🎓 Entendendo cada linha:
 
 - **FROM nginx:alpine**: Define a imagem base. Alpine é uma versão Linux super leve
-- **LABEL**: Adiciona metadados à imagem (opcional mas recomendado)
-- **RUN**: Executa comandos durante a construção da imagem
 - **COPY**: Copia arquivos do host para dentro da imagem
 - **EXPOSE**: Documenta qual porta o container usa
 - **CMD**: Define o comando padrão ao iniciar o container
