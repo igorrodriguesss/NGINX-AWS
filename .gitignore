@@ -35,3 +35,7 @@
 # Docker
 *.env
 .docker/
+
+secret-aws-credentials
+nginx.pem
+nginx.pem:Zone.Identifier
